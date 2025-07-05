@@ -1,9 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./Searcher.css";
 
 const API_KEY = "AIzaSyBf-UHu8ZHl_vNFnujzPBYnR9GoC73vKhw";
 
 function Searcher({ query, onHandleQuery, onHandleResults }) {
+  const searchBar = useRef(null);
+
+  useEffect(() => {
+    function callback(e) {
+      if (document.activeElement === searchBar) return;
+
+      if (e.code === "Enter") {
+        searchBar.current.focus();
+        onHandleQuery("");
+      }
+    }
+
+    document.addEventListener("Keydown", callback);
+
+    return document.addEventListener("keydown", callback);
+  }, []);
+
   useEffect(() => {
     const abortController = new AbortController();
     const { signal } = abortController;
@@ -41,6 +58,7 @@ function Searcher({ query, onHandleQuery, onHandleResults }) {
         placeholder="Start your search..."
         value={query}
         onChange={(e) => onHandleQuery(e.target.value)}
+        ref={searchBar}
       />
     </div>
   );
