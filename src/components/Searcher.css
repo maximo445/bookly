@@ -1,0 +1,15 @@
+.searcher {
+  display: flex;
+  color: white;
+  gap: 20px;
+}
+
+.query {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.query:focus {
+  outline: none;
+}

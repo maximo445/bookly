@@ -1,0 +1,35 @@
+.rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.container {
+  color: white;
+  min-width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: grey;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.btn {
+  background: none;
+  border: none;
+}
+
+.add-btn {
+  color: white;
+  background: purple;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}

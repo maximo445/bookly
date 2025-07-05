@@ -1,0 +1,76 @@
+.books {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  background: rgb(75, 75, 75);
+  border-radius: 8px;
+  padding: 0;
+  list-style: none;
+  height: 500px;
+}
+
+/* Container for scrollable content */
+.books {
+  /* Set a fixed height for the container */
+  overflow-y: auto;
+  /* Optional: Prevent horizontal scrolling */
+  overflow-x: hidden;
+  /* Ensure the container doesn't expand */
+  /* Optional: Add some padding for aesthetics */
+  padding: 10px;
+  /* Optional: Ensure content doesn't overflow horizontally */
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar styling for WebKit browsers */
+.books::-webkit-scrollbar {
+  width: 8px; /* Thin scrollbar width */
+}
+
+.books::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light grey track */
+  border-radius: 4px; /* Rounded track */
+}
+
+.books::-webkit-scrollbar-thumb {
+  background: #b0b0b0; /* Greyish thumb */
+  border-radius: 4px; /* Rounded thumb */
+}
+
+.books::-webkit-scrollbar-thumb:hover {
+  background: #888; /* Darker grey on hover */
+}
+
+/* Optional: Firefox scrollbar styling */
+.books {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #b0b0b0 #f1f1f1; /* Thumb and track colors */
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 8px;
+  transition: 0.2s all ease-in-out;
+}
+
+.book:hover {
+  background: grey;
+}
+
+.image {
+  width: 50px;
+  height: 80px;
+}
+
+.book-title {
+  color: white;
+  margin: 0;
+}
+
+.author {
+  color: white;
+  margin: 0;
+}

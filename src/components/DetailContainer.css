@@ -1,0 +1,9 @@
+.detailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(75, 75, 75);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0;
+}

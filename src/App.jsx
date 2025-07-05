@@ -1,25 +1,51 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Header from "./components/Header";
+import Logo from "./components/Logo";
+import Searcher from "./components/Searcher";
+import ResultCount from "./components/ResultCount";
+import MainContainer from "./components/MainContainer";
+import Books from "./components/Books";
+import DetailContainer from "./components/DetailContainer";
+import BookDetail from "./components/BookDetail";
+import Rating from "./components/Rating";
+import Library from "./components/Library";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [query, setQuery] = useState("");
+  const [id, setId] = useState(null);
+  const [results, setResults] = useState(() => []);
+
+  function handleSetID(id) {
+    setId(id);
+  }
+
+  function handleSetQuery(value) {
+    setQuery(value);
+  }
+
+  function handleSetResults(value) {
+    setResults(value);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Bookly</h1>
-
-      <p className="read-the-docs">App coming soon...</p>
-    </>
+    <div className="app">
+      <Header>
+        <Logo />
+        <Searcher
+          query={query}
+          onHandleQuery={handleSetQuery}
+          onHandleResults={handleSetResults}
+        />
+        <ResultCount count={results?.length ? results.length : 0} />
+      </Header>
+      <MainContainer>
+        <Books books={results} onHandleSetID={handleSetID} />
+        <DetailContainer>
+          {id ? <BookDetail id={id} setId={setId} /> : <Library />}
+        </DetailContainer>
+      </MainContainer>
+    </div>
   );
 }
 

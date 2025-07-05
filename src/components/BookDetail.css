@@ -1,0 +1,40 @@
+.bookDetail {
+  height: 100%;
+  width: 100%;
+  background: rgb(75, 75, 75);
+  border-radius: 8px;
+}
+
+.title-container {
+  display: flex;
+  gap: 10px;
+}
+
+.title-container button {
+  background: none;
+  border: none;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  color: white;
+  background: grey;
+}
+
+.header-description {
+  padding-right: 40px;
+}
+
+.description {
+  color: white;
+  padding: 0 30px 30px 30px;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
